@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KenjaWord — Word互換のMacワードプロセッサー · ネイティブ速度、プライバシーはデフォルト</title>
+<meta name="description" content="KenjaWordは、Mac용の高速でWord互換のワードプロセッサー。本来の.docxを開いて編集——リボン、スタイル、変更履歴、表、参照がそろい、文書を読んだAIアシスタントも、モデルのエンドポイントは自分で設定。アカウント不要、トラッキングなし。">
+<link rel="canonical" href="https://kenjaword.kofukuai.com/ja.html">
+<link rel="alternate" hreflang="en" href="https://kenjaword.kofukuai.com/">
+<link rel="alternate" hreflang="zh-Hans" href="https://kenjaword.kofukuai.com/zh.html">
+<link rel="alternate" hreflang="ja" href="https://kenjaword.kofukuai.com/ja.html">
+<link rel="alternate" hreflang="x-default" href="https://kenjaword.kofukuai.com/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KenjaWord">
+<meta property="og:title" content="KenjaWord — Word互換のMacワードプロセッサー">
+<meta property="og:description" content="知り尽くしたWordのワークフローを、ネイティブの速度で。.docxをそのまま読み書き、Wordと往復できる変更履歴、そして文書をちゃんと読んだAIアシスタント——自分のモデルで、自分のMacの中で。">
+<meta property="og:url" content="https://kenjaword.kofukuai.com/ja.html">
+<meta property="og:image" content="https://kenjaword.kofukuai.com/assets/wordflow.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="KenjaWord — Word互換のMacワードプロセッサー">
+<meta name="twitter:description" content=".docxをそのまま読み書き、ネイティブの速度で。プライバシーはデフォルト：アカウントなし、トラッキングなし、キーはMacの中に。">
+<meta name="twitter:image" content="https://kenjaword.kofukuai.com/assets/wordflow.png">
+<meta name="theme-color" content="#0a0d13">
+
+<link rel="icon" type="image/png" sizes="256x256" href="assets/icon-256.png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Spline+Sans+Mono:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "KenjaWord",
+  "applicationCategory": "ProductivityApplication",
+  "operatingSystem": "macOS",
+  "description": "Word互換のMacワードプロセッサー。本来の.docxの読み書きに対応し、リボン、スタイル、表、参照、変更履歴をネイティブの速度で。プライバシーはデフォルト：アカウントなし、トラッキングなし。AIアシスタントは自分で設定したモデルエンドポイントに接続します。",
+  "url": "https://kenjaword.kofukuai.com/ja.html",
+  "author": { "@type": "Organization", "name": "KenjaHub", "url": "https://github.com/KenjaHub" },
+  "featureList": [
+    "本来の.docxの読み書き——スタイル、表、フィールド、脚注、数式、変更履歴、コメントが完全に往復",
+    "ほかに.doc、RTF、ODT、HTML、Markdownを開き、PDFへ書き出し",
+    "Word風のリボン、スタイルギャラリー、キーボードショートカット、コマンド検索",
+    "変更履歴、コメントバルーン、文書比較をWordと同じ形式で保存",
+    "表スタイルギャラリー、自動目次、差し込み印刷",
+    "Zoteroで引用・参考文献を挿入。フィールドはWordのZoteroプラグインと互換",
+    "開いている文書を読み、ページ参照付きで答えるAIアシスタントペイン",
+    "モデル持ち込み——OpenAI互換のエンドポイント全般（ローカルサーバー含む）。APIキーはMac内に保存",
+    "20以上の言語にローカライズされたUI"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "KenjaWordは本物のWord文書を開けますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "はい。.docxはネイティブ形式です——スタイル、表、フィールド、脚注、数式、変更履歴、コメントがすべて完全に往復します。旧形式の.docも読み込んで変換し、RTF・ODT・HTML・Markdownも開け、PDFへの書き出しや印刷もできます。" }
+    },
+    {
+      "@type": "Question",
+      "name": "アカウントやサブスクリプションは必要ですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "いいえ。KenjaWordにサインインもテレメトリーも広告もありません。AIを含むすべての機能にアカウントは不要です——AIはモデルのエンドポイントとキーをご自身でご用意いただく方式です。" }
+    },
+    {
+      "@type": "Question",
+      "name": "AIアシスタントには何が見えますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "質問に答えるために必要な範囲だけです：開いている文書の概要、質問に関連するテキスト、文書内で実行した検索の結果。リクエストはお客様のMacから設定済みのAIエンドポイントへ直接送信され、当社のサーバーを経由することはありません。チャットセッションはメモリー上のみで、アプリを閉じれば消えます。" }
+    },
+    {
+      "@type": "Question",
+      "name": "どのAIモデルが使えますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "OpenAI互換のエンドポイントなら何でもです：OpenAIやDeepSeekなどのホスト型プロバイダーも、Ollamaのようなローカルサーバーも。エンドポイント・モデル・APIキーは「AI Models」ダイアログで設定し、複数のプロファイルを保存して切り替えられます。" }
+    },
+    {
+      "@type": "Question",
+      "name": "Zoteroに対応していますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "はい。KenjaWordはZoteroのワードプロセッサー用プロトコルで通信します：お客様のマシン上のZoteroアプリから引用と参考文献を挿入・更新できます。引用はWordのZoteroプラグインと同じ方法で保存されるため、文書はWord・LibreOffice・KenjaWordの間を自由に行き来できます。" }
+    },
+    {
+      "@type": "Question",
+      "name": "対応プラットフォームは？",
+      "acceptedAnswer": { "@type": "Answer", "text": "KenjaWordはMac App Storeに近日登場予定です。Windows、Linux、BSD、ウェブ版が同じコードベースから開発中です。" }
+    }
+  ]
+}
+</script>
+
+<style>
+:root{
+  --ink:#0a0d13;
+  --ink-2:#10141d;
+  --ink-3:#161c28;
+  --line:rgba(96,165,250,.16);
+  --line-2:rgba(255,255,255,.08);
+  --blue:#5aa2ff;
+  --blue-soft:#8abaff;
+  --paper:#edf1f7;
+  --paper-dim:#a9b4c4;
+  --paper-faint:#6e7a8c;
+  --serif:"Fraunces","Noto Sans JP",Georgia,serif;
+  --sans:"Instrument Sans","Noto Sans JP",-apple-system,"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+  --mono:"Spline Sans Mono","SF Mono",Menlo,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--ink);
+  color:var(--paper);
+  font-family:var(--sans);
+  font-size:17px;
+  line-height:1.8;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:3;
+  background:
+    radial-gradient(1200px 600px at 50% -10%, rgba(90,162,255,.08), transparent 60%),
+    radial-gradient(900px 700px at 100% 100%, rgba(90,162,255,.04), transparent 55%);
+}
+body::after{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:2;opacity:.5;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+}
+::selection{background:var(--blue);color:var(--ink)}
+
+.wrap{max-width:1120px;margin:0 auto;padding:0 28px;position:relative;z-index:4}
+
+/* ---------- top bar ---------- */
+.bar{
+  position:sticky;top:0;z-index:10;
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  background:rgba(10,13,19,.82);
+  border-bottom:1px solid var(--line);
+}
+.bar .wrap{display:flex;align-items:center;gap:22px;height:60px}
+.logo{font-family:var(--serif);font-weight:700;font-size:21px;letter-spacing:.01em;color:var(--paper);text-decoration:none;display:flex;align-items:center;gap:10px}
+.logo img{width:26px;height:26px;border-radius:6px;display:block}
+.bar nav{margin-left:auto;display:flex;gap:26px;align-items:center}
+.bar nav a{color:var(--paper-dim);text-decoration:none;font-size:14.5px;letter-spacing:.02em;transition:color .18s}
+.bar nav a:hover{color:var(--blue-soft)}
+.lang-menu{position:relative;font-family:var(--mono);font-size:12.5px}
+.lang-menu summary{list-style:none;cursor:pointer;user-select:none;color:var(--paper-faint);border:1px solid var(--line-2);padding:5px 11px;border-radius:99px;display:inline-flex;align-items:center;gap:7px;transition:all .18s}
+.lang-menu summary::-webkit-details-marker{display:none}
+.lang-menu summary::after{content:"";width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:4px solid currentColor;margin-top:2px}
+.lang-menu summary:hover,.lang-menu[open] summary{border-color:var(--blue);color:var(--blue)}
+.lang-pop{position:absolute;right:0;top:calc(100% + 10px);background:var(--ink-3);border:1px solid var(--line-2);border-radius:12px;padding:6px;display:flex;flex-direction:column;min-width:132px;z-index:60;box-shadow:0 18px 50px rgba(0,0,0,.55)}
+.lang-pop a{color:var(--paper-dim);text-decoration:none;padding:8px 12px;border-radius:8px;font-size:12.5px;white-space:nowrap;transition:color .15s,background .15s}
+.lang-pop a:hover{background:rgba(90,162,255,.09);color:var(--blue)}
+.lang-pop a[aria-current]{color:var(--blue);pointer-events:none}
+
+/* ---------- hero ---------- */
+.hero{padding:96px 0 40px;position:relative}
+.hero .tc{
+  font-family:var(--mono);font-size:12.5px;color:var(--blue);
+  letter-spacing:.14em;text-transform:uppercase;
+  display:flex;align-items:center;gap:14px;margin-bottom:26px;
+}
+.hero .tc::after{content:"";height:1px;flex:0 0 72px;background:linear-gradient(90deg,var(--blue),transparent)}
+.hero h1{
+  font-family:var(--serif);font-weight:600;
+  font-size:clamp(40px,5.8vw,76px);
+  line-height:1.12;letter-spacing:-.015em;
+}
+.hero h1 em{font-style:normal;color:var(--blue);font-weight:500}
+.hero .sub{margin-top:26px;max-width:60ch;color:var(--paper-dim);font-size:19px}
+.hero .sub strong{color:var(--paper);font-weight:600}
+.cta-row{margin-top:38px;display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+.cta-soon{
+  display:inline-flex;align-items:center;gap:10px;
+  border:1px solid var(--line);border-radius:12px;
+  padding:15px 22px;font-size:16.5px;font-weight:600;color:var(--paper);
+  background:linear-gradient(180deg,rgba(90,162,255,.10),rgba(90,162,255,.03));
+}
+.cta-soon .tick{width:9px;height:9px;border-radius:50%;background:var(--blue);box-shadow:0 0 12px rgba(90,162,255,.8);animation:blink 1.6s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+.cta-note{font-family:var(--mono);font-size:12.5px;color:var(--paper-faint)}
+
+/* document window w/ cycling captions */
+.screen{
+  margin:64px 0 0;position:relative;border-radius:18px;overflow:hidden;
+  border:1px solid var(--line-2);
+  background:linear-gradient(180deg,#141b28,#0b0e15);
+  box-shadow:0 40px 120px rgba(0,0,0,.55), 0 0 0 1px rgba(90,162,255,.06);
+}
+.screen img{display:block;width:100%;height:auto}
+.screen .cap{
+  position:absolute;left:0;right:0;bottom:34px;text-align:center;pointer-events:none;
+}
+.screen .cap span{
+  display:inline-block;background:rgba(6,8,12,.78);border-radius:8px;
+  padding:10px 18px;font-size:clamp(14px,2vw,19px);font-weight:500;
+  color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.9);
+  opacity:0;animation:capCycle 12s infinite;
+}
+.screen .cap span:nth-child(2){animation-delay:3s}
+.screen .cap span:nth-child(3){animation-delay:6s}
+.screen .cap span:nth-child(4){animation-delay:9s;color:var(--blue-soft)}
+@keyframes capCycle{0%{opacity:0;transform:translateY(6px)}4%,22%{opacity:1;transform:translateY(0)}26%,100%{opacity:0;transform:translateY(-2px)}}
+.screen .tcode{
+  position:absolute;top:16px;right:18px;font-family:var(--mono);font-size:12px;
+  color:rgba(237,241,247,.8);background:rgba(6,8,12,.6);padding:4px 10px;border-radius:6px;
+  letter-spacing:.06em;
+}
+.screen .rec{position:absolute;top:16px;left:18px;display:flex;gap:8px;align-items:center;font-family:var(--mono);font-size:12px;color:rgba(237,241,247,.75);background:rgba(6,8,12,.6);padding:4px 10px;border-radius:6px}
+.rec i{width:8px;height:8px;border-radius:50%;background:var(--blue);animation:blink 1.6s infinite}
+
+/* ---------- sections ---------- */
+section{padding:88px 0}
+.sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:14px}
+.sec-head .idx{font-family:var(--mono);font-size:13px;color:var(--blue);letter-spacing:.1em}
+.sec-head h2{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4vw,46px);letter-spacing:-.01em}
+.sec-lead{color:var(--paper-dim);max-width:64ch;margin-bottom:48px;font-size:17.5px}
+
+/* scenes / workflow */
+.scenes{display:grid;grid-template-columns:1fr;gap:24px}
+.scene{
+  display:grid;grid-template-columns:minmax(300px,4fr) 6fr;gap:38px;align-items:center;
+  border:1px solid var(--line-2);border-radius:16px;padding:34px 32px;
+  background:linear-gradient(180deg,rgba(255,255,255,.025),rgba(255,255,255,.008));
+  transition:border-color .2s, transform .2s;position:relative;overflow:hidden;
+}
+.scene:hover{border-color:rgba(90,162,255,.4);transform:translateY(-3px)}
+.scene .tag{font-family:var(--mono);font-size:12px;color:var(--blue);letter-spacing:.12em;margin-bottom:14px;display:block}
+.scene h3{font-family:var(--serif);font-size:24px;font-weight:600;margin-bottom:10px}
+.scene p{color:var(--paper-dim);font-size:15.5px}
+.scene img{width:100%;height:auto;border-radius:10px;border:1px solid var(--line-2);display:block}
+
+/* feature grid */
+.feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line-2);border:1px solid var(--line-2);border-radius:16px;overflow:hidden}
+.feat{background:var(--ink);padding:32px 30px;transition:background .2s}
+.feat:hover{background:var(--ink-2)}
+.feat .k{font-family:var(--mono);font-size:12px;color:var(--blue);letter-spacing:.12em;margin-bottom:12px;display:block}
+.feat h3{font-size:19px;font-weight:600;margin-bottom:8px;letter-spacing:.005em}
+.feat p{color:var(--paper-dim);font-size:15px}
+
+/* privacy band */
+.privacy-band{
+  border:1px solid var(--line);border-radius:20px;padding:56px 48px;
+  background:
+    radial-gradient(600px 240px at 12% 0%, rgba(90,162,255,.09), transparent 60%),
+    var(--ink-2);
+  display:grid;grid-template-columns:1.2fr 1fr;gap:44px;align-items:center;
+}
+.privacy-band h2{font-family:var(--serif);font-weight:600;font-size:clamp(28px,3.4vw,40px);line-height:1.2}
+.privacy-band h2 em{font-style:normal;color:var(--blue)}
+.privacy-band p{color:var(--paper-dim);margin-top:14px;max-width:52ch}
+.pill-list{display:flex;flex-direction:column;gap:12px}
+.pill{
+  display:flex;align-items:center;gap:12px;padding:15px 20px;
+  border:1px solid var(--line-2);border-radius:12px;
+  font-size:15.5px;background:rgba(10,13,19,.6);
+}
+.pill b{color:var(--blue-soft);font-weight:600}
+.pill .tick{color:var(--blue);font-family:var(--mono)}
+
+/* faq */
+.faq{max-width:780px}
+.faq details{border-bottom:1px solid var(--line-2);padding:6px 0}
+.faq summary{
+  cursor:pointer;list-style:none;padding:20px 4px;font-size:18px;font-weight:600;
+  display:flex;align-items:center;gap:16px;transition:color .15s;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"Q";font-family:var(--mono);color:var(--blue);font-size:14px;border:1px solid var(--line);border-radius:8px;width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;flex:0 0 30px}
+.faq summary:hover{color:var(--blue-soft)}
+.faq details[open] summary{color:var(--blue-soft)}
+.faq details p{padding:0 4px 22px 50px;color:var(--paper-dim);font-size:15.5px;max-width:62ch}
+
+/* footer */
+footer{border-top:1px solid var(--line-2);padding:52px 0 64px;margin-top:40px}
+.foot{display:flex;gap:40px;flex-wrap:wrap;align-items:flex-start;justify-content:space-between}
+.foot .logo{font-size:19px}
+.foot small{display:block;color:var(--paper-faint);font-family:var(--mono);font-size:12px;margin-top:10px}
+.foot nav{display:flex;gap:24px;flex-wrap:wrap}
+.foot nav a{color:var(--paper-dim);text-decoration:none;font-size:14.5px}
+.foot nav a:hover{color:var(--blue-soft)}
+
+/* reveal animation */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.rv.on{opacity:1;transform:none}
+.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}
+
+@media(max-width:900px){
+  .scene{grid-template-columns:1fr;padding:26px 22px;gap:0}
+  .scene img{margin-top:20px}
+  .feat-grid{grid-template-columns:1fr}
+  .privacy-band{grid-template-columns:1fr;padding:40px 30px}
+  .bar nav > a{display:none}
+  section{padding:64px 0}
+  .hero{padding:64px 0 24px}
+  .hero .tc::after{display:none}
+}
+@media(max-width:480px){
+  .hero .tc{font-size:11px;letter-spacing:.08em}
+}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="logo" href="/ja.html"><img src="assets/icon-256.png" alt="">KenjaWord</a>
+    <nav>
+      <a href="#workflow">ワークフロー</a>
+      <a href="#features">機能</a>
+      <a href="#privacy">プライバシー</a>
+      <a href="#faq">FAQ</a>
+      <details class="lang-menu">
+        <summary>Language</summary>
+        <div class="lang-pop">
+          <a href="/" hreflang="en">English</a>
+          <a href="/zh.html" hreflang="zh-Hans">简体中文</a>
+          <a href="/ja.html" hreflang="ja" aria-current="page">日本語</a>
+        </div>
+      </details>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="tc rv">.docx · リボン · 変更履歴 · AI</div>
+    <h1 class="rv d1">Wordのワークフローを、<br><em>ネイティブの速度で。</em></h1>
+    <p class="sub rv d2">
+      KenjaWordは<strong>高速でWord互換のMacワードプロセッサー</strong>。
+      <strong>本来の.docx</strong>を開いて保存——スタイル、表、参照、変更履歴——そのすべてを、
+      慣れ親しんだリボンのまま。そして文書がMacの外へ出ることはありません。
+    </p>
+    <div class="cta-row rv d3">
+      <span class="cta-soon"><span class="tick"></span>Mac App Storeに近日登場</span>
+      <span class="cta-note">アカウント不要 · サブスクなし · 文書はローカルに</span>
+    </div>
+
+    <figure class="screen rv d3">
+      <img src="assets/wordflow.png" alt="Mac上のKenjaWord：慣れ親しんだリボンUIで文書を開いた画面——Homeタブ、スタイルギャラリー、ルーラー、ステータスバーの文字数" width="2560" height="1600" fetchpriority="high">
+      <div class="rec"><i></i>LOCAL FIRST</div>
+      <div class="tcode">.docx</div>
+      <div class="cap">
+        <span>書類はこの Mac の中だけ</span>
+        <span>Your documents never leave your Mac</span>
+        <span>文档从不离开你的 Mac</span>
+        <span>— KenjaWord, 賢者のためのペン</span>
+      </div>
+    </figure>
+  </section>
+
+  <!-- WORKFLOW -->
+  <section id="workflow">
+    <div class="sec-head rv"><span class="idx">01</span><h2>ひとつのウィンドウに、すべて</h2></div>
+    <p class="sec-lead rv">執筆、質問、レビュー、仕上げをアプリの切り替えなしで。各機能が連携し、すべてが.docxに戻ります。</p>
+    <div class="scenes">
+      <article class="scene rv">
+        <div>
+          <span class="tag">01 · 執筆</span>
+          <h3>学び直しは不要</h3>
+          <p>リボン、スタイルギャラリー、ルーラー、ステータスバーの文字数——レイアウトは知っているあのままなので、月曜の朝から説明書いらず。すべては.docxに保存され、Wordは文句なく開きます。</p>
+        </div>
+        <img src="assets/wordflow.png" alt="KenjaWordの文書ウィンドウ：Homeリボン、スタイルギャラリー、ルーラー" loading="lazy" width="2560" height="1600">
+      </article>
+      <article class="scene rv">
+        <div>
+          <span class="tag">02 · 質問</span>
+          <h3>文書をちゃんと読んだアシスタント</h3>
+          <p>文書の要約や、デポジットの締め切りがどこに書いてあるか、誰がどのページで触れられているか——AIペインは文書を読み（概要・本文・検索）、ページ参照付きで答えます。読むだけで、ことわりがない限り本文には触れません。</p>
+        </div>
+        <img src="assets/ai-chat.png" alt="KenjaWordのAI Chatペイン：開いている文書についてツール呼び出しとページ参照付きで回答" loading="lazy" width="2560" height="1600">
+      </article>
+      <article class="scene rv">
+        <div>
+          <span class="tag">03 · モデル持ち込み</span>
+          <h3>自分のモデルを。キーはMacの中に。</h3>
+          <p>OpenAI、DeepSeek、ローカルのOllama——OpenAI互換のエンドポイントなら何でも接続できます。APIキーはこのMacの設定に留まり、リクエストはお客様のマシンから選んだエンドポイントへ直行、当社を経由しません。AIを使わないなら、設定しないだけ。誰とも通信しません。</p>
+        </div>
+        <img src="assets/models.png" alt="KenjaWordのAI Modelsダイアログ：エンドポイントURL、APIキー、モデルの各フィールド。キーはMacのローカル設定に保存" loading="lazy" width="2560" height="1600">
+      </article>
+      <article class="scene rv">
+        <div>
+          <span class="tag">04 · レビュー</span>
+          <h3>往復に耐える変更履歴</h3>
+          <p>リビジョン、コメントバルーン、文書比較——すべてWordと同じ形式で保存。Word・LibreOffice・KenjaWordの間を何度往復しても、変更の作者とタイムスタンプはそのまま残ります。</p>
+        </div>
+        <img src="assets/review.png" alt="KenjaWordのレビューペイン：タイトルの変更履歴と、返信・解決ボタン付きのコメントバルーン" loading="lazy" width="2560" height="1600">
+      </article>
+      <article class="scene rv">
+        <div>
+          <span class="tag">05 · 仕上げ</span>
+          <h3>表も目次も参照も、最初から</h3>
+          <p>ライブプレビュー付きの表スタイル、自動目次、脚注、差し込み印刷、数式、PDF書き出し。長文文書のための機構すべてが基本機能に含まれます——アップセルではありません。</p>
+        </div>
+        <img src="assets/tables.png" alt="KenjaWord：Table DesignタブとTable Layoutタブが開き、スタイル適用済みの表を編集している画面" loading="lazy" width="2560" height="1600">
+      </article>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features">
+    <div class="sec-head rv"><span class="idx">02</span><h2>本業をこなすネイティブアプリ</h2></div>
+    <p class="sec-lead rv">「編集機能つきビューア」ではありません——速度と開放性のために作り直された、本格ワードプロセッサーです。</p>
+    <div class="feat-grid rv">
+      <div class="feat">
+        <span class="k">フォーマット</span>
+        <h3>届いたものは何でも開ける</h3>
+        <p>双方向の.docxがネイティブ形式。ほかに.doc、RTF、ODT、HTML、Markdownを開き、PDFへ書き出し——「これ開けますか？」への答えは、いつも「はい」。</p>
+      </div>
+      <div class="feat">
+        <span class="k">速度</span>
+        <h3>ネイティブコード、ウェブアプリではない</h3>
+        <p>Rustで構築——瞬時に起動し、長文でもタイプ中の滑らかさが落ちません。Electronも、カーソルの位置でくるくる回るスピナーもありません。</p>
+      </div>
+      <div class="feat">
+        <span class="k">キーボード</span>
+        <h3>すべてのコマンドをひと検索で</h3>
+        <p>タイトルバーから全コマンドを検索、ショートカットとKeyTipでリボンをキーボードから操作、コマンドラインからの駆動も。</p>
+      </div>
+      <div class="feat">
+        <span class="k">言語</span>
+        <h3>20以上の言語のUI</h3>
+        <p>日本語、简体中文、繁體中文、한국어、Deutsch、Englishなど——いつでも切り替えられ、文書ごとの校正言語にも対応。</p>
+      </div>
+      <div class="feat">
+        <span class="k">引用</span>
+        <h3>Zoteroを内蔵</h3>
+        <p>お客様のマシン上のZoteroアプリと協働して、引用と参考文献を挿入・更新。フィールドはWordのZoteroプラグインと同じ方法で保存されるので、文書は常に移植可能です。</p>
+      </div>
+      <div class="feat">
+        <span class="k">数式</span>
+        <h3>数式は原形のまま</h3>
+        <p>Office数式（OMML）の読み書き・編集に対応——テーマカラーのままWordへ完全往復し、先方でもそのまま編集できます。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRIVACY -->
+  <section id="privacy">
+    <div class="sec-head rv"><span class="idx">03</span><h2>プライバシーはデフォルト</h2></div>
+    <div class="privacy-band rv">
+      <div>
+        <h2>文書はローカルに。<em>キーも、です。</em></h2>
+        <p>KenjaWordはお客様のマシン上で働き、誰とも通信しません——アカウントなし、分析なし、テレメトリーなし。AIペインは唯一ありうる接続で、お客様のMacから<em>お客様が</em>設定したエンドポイントへ直接向かいます。App Storeのプライバシーラベル：データ収集なし。</p>
+        <p style="margin-top:18px"><a href="privacy.html" style="color:var(--blue-soft)">プライバシーポリシーを読む →</a></p>
+      </div>
+      <div class="pill-list">
+        <div class="pill"><span class="tick">✓</span><span><b>文書：</b>デバイス上で開き、保存</span></div>
+        <div class="pill"><span class="tick">✓</span><span><b>テレメトリー：</b>一切なし</span></div>
+        <div class="pill"><span class="tick">✓</span><span><b>アカウント：</b>なし——サインイン先が存在しません</span></div>
+        <div class="pill"><span class="tick">✓</span><span><b>AIキー：</b>Macの設定に留まり、リクエストは直結</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="sec-head rv"><span class="idx">04</span><h2>よくあるご質問</h2></div>
+    <div class="faq rv">
+      <details open>
+        <summary>KenjaWordは本物のWord文書を開けますか？</summary>
+        <p>はい。.docxはネイティブ形式です——スタイル、表、フィールド、脚注、数式、変更履歴、コメントがすべて完全に往復します。旧形式の.docも読み込んで変換し、RTF・ODT・HTML・Markdownも開け、PDFへの書き出しや印刷もできます。</p>
+      </details>
+      <details>
+        <summary>アカウントやサブスクリプションは必要ですか？</summary>
+        <p>いいえ。KenjaWordにサインインもテレメトリーも広告もありません。AIを含むすべての機能にアカウントは不要です——AIはモデルのエンドポイントとキーをご自身でご用意いただく方式です。</p>
+      </details>
+      <details>
+        <summary>AIアシスタントには何が見えますか？</summary>
+        <p>質問に答えるために必要な範囲だけです：開いている文書の概要、質問に関連するテキスト、文書内で実行した検索の結果。リクエストはお客様のMacから設定済みのAIエンドポイントへ直接送信され、当社のサーバーを経由することはありません。チャットセッションはメモリー上のみで、アプリを閉じれば消えます。</p>
+      </details>
+      <details>
+        <summary>どのAIモデルが使えますか？</summary>
+        <p>OpenAI互換のエンドポイントなら何でもです：OpenAIやDeepSeekなどのホスト型プロバイダーも、Ollamaのようなローカルサーバーも。エンドポイント・モデル・APIキーは「AI Models」ダイアログで設定し、複数のプロファイルを保存して切り替えられます。</p>
+      </details>
+      <details>
+        <summary>Zoteroに対応していますか？</summary>
+        <p>はい。KenjaWordはZoteroのワードプロセッサー用プロトコルで通信します：お客様のマシン上のZoteroアプリから引用と参考文献を挿入・更新できます。引用はWordのZoteroプラグインと同じ方法で保存されるため、文書はWord・LibreOffice・KenjaWordの間を自由に行き来できます。</p>
+      </details>
+      <details>
+        <summary>対応プラットフォームは？</summary>
+        <p>KenjaWordはMac App Storeに近日登場予定です。Windows、Linux、BSD、ウェブ版が同じコードベースから開発中です。</p>
+      </details>
+    </div>
+  </section>
+
+</div>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <a class="logo" href="/ja.html"><img src="assets/icon-256.png" alt="">KenjaWord</a>
+      <small>© 2026 KenjaHub · 賢者のためのペン</small>
+    </div>
+    <nav>
+      <a href="privacy.html">プライバシーポリシー</a>
+      <a href="https://github.com/KenjaHub" rel="noopener">GitHub</a>
+      <a href="https://github.com/KenjaHub/KenjaWord/issues" rel="noopener">サポート</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+document.addEventListener('click',e=>{document.querySelectorAll('details.lang-menu[open]').forEach(d=>{if(!d.contains(e.target))d.removeAttribute('open')})});
+</script>
+</body>
+</html>

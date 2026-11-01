@@ -41,9 +41,17 @@ The AI pane is optional and bring-your-own-model: you point it at any OpenAI-com
 **Which platforms are supported?**
 macOS (Mac App Store), with Windows, Linux, BSD and web builds on the same codebase.
 
-## About this repository
+## Website (this repository)
 
-This repository is the KenjaWord product home on GitHub: it hosts the privacy policy ([privacy.md](privacy.md)) and the product website (published via GitHub Pages), and takes bug reports and support requests through [Issues](https://github.com/KenjaHub/KenjaWord/issues).
+The product site lives in [`docs/`](docs/) and is served by GitHub Pages at <https://kenjaword.kofukuai.com> (custom domain via `docs/CNAME`; EN at `index.html`, 简体中文 at `zh.html`, 日本語 at `ja.html`, privacy at `privacy.html`, plus `robots.txt`, `sitemap.xml` and `llms.txt`).
+
+Publishing notes:
+
+- GitHub Pages: deploy from branch `main`, folder `/docs` (repo Settings → Pages).
+- DNS: `kenjaword.kofukuai.com` CNAME → `KenjaHub.github.io`.
+- Google Search Console verification: `docs/google6b6daf8cbba65014.html` (same account token as the other Kenja sites) — verify once the domain is live.
+
+This repository is also the KenjaWord product home on GitHub: it hosts the privacy policy ([privacy.md](privacy.md)) and takes bug reports and support requests through [Issues](https://github.com/KenjaHub/KenjaWord/issues).
 
 ## 中文介绍
 

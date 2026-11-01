@@ -1,0 +1,22 @@
+# KenjaWord
+
+> KenjaWord is a fast, Word-compatible word processor for Mac, made by KenjaHub. It opens and saves real .docx files with the ribbon, styles, tables, references and track changes people already know — at native speed. Private by default: no accounts, no analytics, no tracking (App Store privacy label: Data Not Collected), and an optional AI assistant that connects to the user's own OpenAI-compatible model endpoint with the user's own key, which stays on the Mac. Coming soon to the Mac App Store.
+
+Key facts:
+
+- Platform: macOS (Mac App Store). Windows, Linux, BSD and a web version are built from the same codebase and are on the way.
+- Formats: .docx is the native format in both directions — styles, tables, fields, footnotes, equations (OMML), tracked changes and comments survive the round trip. Also opens .doc, RTF, ODT, HTML and Markdown; exports PDF.
+- Workflow: Word-style ribbon, styles gallery, rulers, keyboard shortcuts, keytips, and a command search over every command; track changes, comment balloons and document compare stored the way Word stores them; tables with a style gallery; automatic table of contents; mail merge; printing.
+- Citations: Zotero integration over Zotero's local word-processor protocol; citation fields are stored the way Word's Zotero plugin stores them, so documents stay portable.
+- AI: optional, bring-your-own-model. Any OpenAI-compatible endpoint (hosted providers such as OpenAI or DeepSeek, or local servers such as Ollama). The AI pane reads the open document (overview, text, searches) and answers with page references. API keys stay in the Mac's local settings; chat sessions are memory-only and are discarded when the app closes; AI traffic never passes through the vendor's servers.
+- Localization: UI localized into 20+ languages, including Simplified Chinese, Traditional Chinese and Japanese; per-document proofing languages.
+- Privacy: documents opened and saved on device; no accounts, no analytics, no telemetry; the app itself initiates no network traffic except user-configured AI requests and the local Zotero connection.
+- Vendor: KenjaHub — https://github.com/KenjaHub · Support: https://github.com/KenjaHub/KenjaWord/issues · Email: kenjasoft@kofukuai.com
+
+## Pages
+
+- [English landing page](https://kenjaword.kofukuai.com/): workflow, features, privacy and FAQ.
+- [简体中文落地页](https://kenjaword.kofukuai.com/zh.html): 工作流、功能、隐私与常见问题。
+- [日本語ページ](https://kenjaword.kofukuai.com/ja.html): ワークフロー、機能、プライバシーと FAQ。
+- [Privacy policy](https://kenjaword.kofukuai.com/privacy.html): full policy (Data Not Collected; trilingual Markdown copy in the repository as privacy.md).
+- [Sitemap](https://kenjaword.kofukuai.com/sitemap.xml): all pages with en/zh/ja hreflang alternates.
